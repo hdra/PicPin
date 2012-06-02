@@ -1,0 +1,50 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="HM.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <my:Map Height="800"
+                Name="map"
+                Width="480"
+                CredentialsProvider="Aj2brjWtbnI6RC9MMltOzHb5UBNWGADmJA2Wn6Zq1wri11pTMgtfN3HyMbaGNB5T"
+                ZoomLevel="10"
+                ViewChangeEnd="map_ViewChangeEnd"/>
+        <TextBlock Name="loadingText" FontSize="24" Margin="12,753,0,6" Foreground="Black" Text="Loading"></TextBlock>
+        <toolkit:DatePicker Name="datePicker" ValueChanged="datePicker_ValueChanged" />
+        <Popup x:Name="popUp" Width="480" Height="800">
+            <StackPanel Orientation="Vertical" Height="800" Width="480" Background="#AA000000" VerticalAlignment="Top">
+                <Image Name="photopreview" Width="480" Height="500" Stretch="Uniform" Margin="0,24,0,0"></Image>
+                <TextBlock Name="phototitle" TextAlignment="Center" FontSize="36" Margin="0,6,0,6" Foreground="White"
+                           Width="480" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Name="photodesc" TextAlignment="Center" FontSize="26" Margin="0,6,0,6" Foreground="White"
+                           Width="480" Height="200" TextWrapping="Wrap"></TextBlock>
+            </StackPanel>
+        </Popup>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
