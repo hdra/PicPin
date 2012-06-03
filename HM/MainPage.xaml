@@ -24,15 +24,22 @@
                 ViewChangeEnd="map_ViewChangeEnd"/>
         <TextBlock Name="loadingText" FontSize="24" Margin="12,753,0,6" Foreground="Black" Text="Loading"></TextBlock>
         <toolkit:DatePicker Name="datePicker" ValueChanged="datePicker_ValueChanged" />
+        
         <Popup x:Name="popUp" Width="480" Height="800">
-            <StackPanel Orientation="Vertical" Height="800" Width="480" Background="#AA000000" VerticalAlignment="Top">
-                <Image Name="photopreview" Width="480" Height="500" Stretch="Uniform" Margin="0,24,0,0"></Image>
-                <TextBlock Name="phototitle" TextAlignment="Center" FontSize="36" Margin="0,6,0,6" Foreground="White"
-                           Width="480" TextWrapping="Wrap"></TextBlock>
-                <TextBlock Name="photodesc" TextAlignment="Center" FontSize="26" Margin="0,6,0,6" Foreground="White"
-                           Width="480" Height="200" TextWrapping="Wrap"></TextBlock>
-            </StackPanel>
+            <Grid Height="800" Width="480" Background="#AA000000">
+                <TextBlock Text="Loading..." Margin="0,124,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="White"/>
+                <StackPanel Orientation="Vertical" Height="800" Width="480"  VerticalAlignment="Top">
+                    <Image Name="photopreview" Width="480" Height="500" Stretch="Uniform" Margin="0,24,0,0"></Image>
+                    <TextBlock Name="phototitle" TextAlignment="Center" FontSize="36" Margin="0,6,0,6" Foreground="White"
+                               Width="480" TextWrapping="Wrap"></TextBlock>
+                    <ScrollViewer Height="200">
+                        <TextBlock Name="photodesc" TextAlignment="Center" FontSize="26" Margin="0,6,0,6" Foreground="White"
+                               Width="480" Height="auto" TextWrapping="Wrap"></TextBlock>
+                    </ScrollViewer>
+                </StackPanel>
+            </Grid>
         </Popup>
+            
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->
