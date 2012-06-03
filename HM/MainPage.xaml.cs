@@ -24,7 +24,8 @@ namespace HM
     {
         // Constructor
         double coordinateThreshold = 1;
-        double dayThreshold = 10;
+        // increase it if not much photos available
+        double dayThreshold = 2;
         Flickr flickr;
 
         ObservableCollection<SearchResult> list;
