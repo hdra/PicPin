@@ -118,6 +118,7 @@ namespace HM
 
         private void map_ViewChangeEnd(object sender, MapEventArgs e)
         {
+            this.coordinateThreshold = (20 - this.map.ZoomLevel) / 10;
             initiateSearch(map.Center.Latitude, map.Center.Longitude, (DateTime)this.datePicker.Value);
         }
 
